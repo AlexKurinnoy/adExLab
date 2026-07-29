@@ -1,0 +1,13 @@
+{
+  "HOME": {
+    "TITLE": "Home page",
+    "WELCOME": "Welcome"
+  },
+  "BUTTON": {
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  },
+  "HEADER": {
+    "LANGUAGE": "Language"
+  }
+}
