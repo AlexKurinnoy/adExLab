@@ -9,5 +9,9 @@
   },
   "HEADER": {
     "LANGUAGE": "Language"
+  },
+  "CONTACT-PAGE": {
+    "READY": "Ready to develop your business together?",
+    "SEND": "Send"
   }
 }
