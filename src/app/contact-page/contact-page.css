@@ -1,47 +1,45 @@
-.contact-box{
+.contact-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .clients{
+
+  .clients {
     width: 90dvw;
     background-color: azure;
     height: 100px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 20px;
+
+
   }
 
-  .contact{
+  .contact {
     width: 90dvw;
     background-color: blanchedalmond;
-    height: 100px;
+    height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     border-radius: 10px;
-    .call-to-action{
-      width: 30%;
-      font-family: "Ubuntu", "Roboto Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    .title_box {
       padding: 20px;
-    }
-    .contact-form{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      .contact-methods{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: space-between;
+
+      h1 {
+        text-align: center;
+        font-family: "Ubuntu", "Roboto Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.8rem;
       }
     }
   }
 }
-footer{
+
+footer {
   width: 100%;
   display: flex;
   height: 100px;

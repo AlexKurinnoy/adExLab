@@ -12,6 +12,9 @@
   },
   "CONTACT-PAGE": {
     "READY": "Ready to develop your business together?",
-    "SEND": "Send"
+    "SEND": "Send",
+    "CONTACT_AS": "Contact us",
+    "CONTACT_AS_DESCR": "Fill out the form and we will contact you as soon as possible",
+    "LETS_GROW": "Let's grow your business together!"
   }
 }

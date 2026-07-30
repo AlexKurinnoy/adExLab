@@ -1,8 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="analytics">
-  <circle cx="32" cy="32" r="24" fill="#FFF7DF" opacity="0.85"/>
-  <g stroke="#F2B21A" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="3">
-    <path d="M17 46h31"/>
-    <path d="M21 46V34M29 46V26M37 46V31M45 46V19"/>
-    <path d="M18 40c3-4 6-3 9-7s6 0 9-5 6-4 11-10" opacity=".65"/>
-  </g>
-</svg>
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;}</style></defs><title>analytics</title><path d="M4,2H2V28a2,2,0,0,0,2,2H30V28H4Z"/><path d="M30,9H23v2h3.59L19,18.59l-4.29-4.3a1,1,0,0,0-1.42,0L6,21.59,7.41,23,14,16.41l4.29,4.3a1,1,0,0,0,1.42,0L28,12.41V16h2Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>

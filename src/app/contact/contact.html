@@ -1,0 +1,64 @@
+<div class="contact">
+
+  <div class="form-card" ngSkipHydration>
+
+    <h2> {{ 'CONTACT-PAGE.CONTACT_AS' | translate }}</h2>
+    <p>{{ 'CONTACT-PAGE.CONTACT_AS_DESCR' | translate }}</p>
+    <div class="line"></div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="row">
+        <input
+          type="text"
+          placeholder="Ім'я"
+          formControlName="name">
+
+        <input
+          type="text"
+          placeholder="Телефон"
+          formControlName="phone">
+      </div>
+      <div class="row">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email">
+      </div>
+      <div class="row">
+      <textarea
+        rows="6"
+        placeholder="Опишіть ваше питання..."
+        formControlName="description"></textarea>
+      </div>
+      <button type="submit">
+        Надіслати повідомлення
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="contact-methods">
+    <div class="tel">
+      +3880 880 50 22
+    </div>
+
+    <a href="skype:live:yourname?chat">
+      Skype
+    </a>
+
+    <a href="https://t.me/username">
+      Telegram
+    </a>
+
+    <a href="">
+      LinkedIn
+    </a>
+
+    <a href="mailto:mail@example.com">
+      Email
+    </a>
+
+  </div>
+
+</div>
