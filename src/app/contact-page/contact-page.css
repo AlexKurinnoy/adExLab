@@ -7,18 +7,20 @@
 
   .clients {
     width: 90dvw;
-    background-color: azure;
+
     height: 100px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     margin-bottom: 20px;
-
+    flex-wrap: wrap;
 
   }
 
   .contact {
     width: 90dvw;
-    background-color: blanchedalmond;
+    background-color: none;
     height: auto;
     display: flex;
     flex-direction: column;

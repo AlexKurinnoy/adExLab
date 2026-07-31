@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.html',
-  imports: [   TranslatePipe ],
+  imports: [TranslatePipe],
   styleUrl: './header.css',
 })
 export class Header {
@@ -24,5 +24,11 @@ export class Header {
     const newLanguage = this.currentLanguage === 'en' ? 'uk' : 'en';
 
     this.translate.use(newLanguage);
+  }
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
   }
 }

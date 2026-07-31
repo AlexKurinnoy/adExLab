@@ -1,30 +1,34 @@
-.steps-main-box{
+.steps-main-box {
   font-family: Ubuntu, sans-serif !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: left;
-  margin: 0 auto;
+  margin: 60px auto;
   width: calc(100% - 80px);
-  .head-title{
+
+  .head-title {
     width: 100%;
     font-size: 1em;
     font-weight: bold;
     color: goldenrod;
     text-align: left;
   }
-  .head-description{
+
+  .head-description {
     margin-top: 20px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    .descript{
+
+    .descript {
       font-size: 1.7em;
     }
   }
-  .steps{
+
+  .steps {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -32,7 +36,8 @@
     align-items: flex-start;
     margin-top: 30px;
     flex-wrap: wrap;
-    .step-box{
+
+    .step-box {
       width: 200px;
       height: 150px;
       display: flex;
@@ -43,23 +48,26 @@
       margin: 10px;
       padding: 30px;
       border-radius: 5px;
-      h2{
+
+      h2 {
         font-size: 1em;
         margin-bottom: 10px;
         text-align: left;
       }
-      a{
+
+      a {
         color: goldenrod;
         text-decoration: none;
         margin-top: 20px;
       }
-      .icons{
+
+      .icons {
         display: flex;
         flex-direction: row;
         justify-content: left;
         width: 100%;
 
-        .number-box, .icon-box{
+        .number-box, .icon-box {
           width: 60px;
           height: 60px;
           background-repeat: no-repeat;
@@ -68,52 +76,62 @@
           margin-bottom: 10px;
         }
       }
-      &:nth-child(1){
-        .icons{
-          .icon-box{
+
+      &:nth-child(1) {
+        .icons {
+          .icon-box {
             background-image: url('/img/message.svg');
           }
-          .number-box{
+
+          .number-box {
             background-image: url('/img/step-01.svg');
           }
         }
       }
-      &:nth-child(2){
-        .icons{
-          .icon-box{
+
+      &:nth-child(2) {
+        .icons {
+          .icon-box {
             background-image: url('/img/search.svg');
           }
-          .number-box{
+
+          .number-box {
             background-image: url('/img/step-02.svg');
           }
         }
       }
-      &:nth-child(3){
-        .icons{
-          .icon-box{
+
+      &:nth-child(3) {
+        .icons {
+          .icon-box {
             background-image: url('/img/pencil.svg');
           }
-          .number-box{
+
+          .number-box {
             background-image: url('/img/step-03.svg');
           }
         }
       }
-      &:nth-child(4){
-        .icons{
-          .icon-box{
+
+      &:nth-child(4) {
+        .icons {
+          .icon-box {
             background-image: url('/img/code.svg');
           }
-          .number-box{
+
+          .number-box {
             background-image: url('/img/step-04.svg');
           }
         }
       }
-      &:nth-child(5){
-        .icons{
-          .icon-box{
+
+      &:nth-child(5) {
+        .icons {
+          .icon-box {
             background-image: url('/img/analytics.svg');
           }
-          .number-box{
+
+          .number-box {
             background-image: url('/img/step-05.svg');
           }
         }
@@ -121,5 +139,5 @@
 
 
     }
-    }
+  }
 }

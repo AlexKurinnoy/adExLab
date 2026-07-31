@@ -1,4 +1,4 @@
-.services-main-box{
+.services-main-box {
   font-family: Ubuntu, sans-serif !important;
   display: flex;
   flex-direction: column;
@@ -7,26 +7,30 @@
   text-align: left;
   margin: 0 auto;
   width: calc(100% - 80px);
-  height: 100dvh;
+  min-height: 100dvh;
+  height: auto;
 
-  .head-title{
+  .head-title {
     width: 100%;
     font-size: 1em;
     font-weight: bold;
     color: goldenrod;
     text-align: left;
   }
-  .head-description{
+
+  .head-description {
     margin-top: 20px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    .descript{
+
+    .descript {
       font-size: 1.7em;
     }
   }
-  .cases{
+
+  .cases {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -34,7 +38,8 @@
     align-items: flex-start;
     margin-top: 30px;
     flex-wrap: wrap;
-    .case-box{
+
+    .case-box {
       width: 250px;
       height: 200px;
       display: flex;
@@ -46,17 +51,20 @@
       padding: 30px;
       border-radius: 5px;
       border: 1px solid lightgray;
-      h2{
+
+      h2 {
         font-size: 1em;
         margin-bottom: 10px;
         text-align: left;
       }
-      a{
+
+      a {
         color: goldenrod;
         text-decoration: none;
         margin-top: 20px;
       }
-      .icon-box{
+
+      .icon-box {
         width: 100%;
         height: 60px;
         background-repeat: no-repeat;
@@ -64,43 +72,51 @@
         background-size: contain;
         margin-bottom: 20px;
       }
+
       &:nth-child(1) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/target-2.svg');
         }
       }
+
       &:nth-child(2) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/palette.svg');
         }
       }
+
       &:nth-child(3) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/code.svg');
         }
       }
+
       &:nth-child(4) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/cart.svg');
         }
       }
+
       &:nth-child(5) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/growth-seo.svg');
         }
       }
+
       &:nth-child(6) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/google-ads.svg');
         }
       }
+
       &:nth-child(7) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/meta.svg');
         }
       }
+
       &:nth-child(8) {
-        .icon-box{
+        .icon-box {
           background-image: url('/img/analytics.svg');
         }
       }

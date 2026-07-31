@@ -7,6 +7,7 @@
 
 .form-card {
   background: #fff;
+  border: 1px solid #ccc;
   padding: 40px;
   border-radius: 10px;
 
@@ -58,7 +59,22 @@ button {
   padding: 18px;
   cursor: pointer;
   font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  &:hover {
+    box-shadow: inset 0 0 20px rgba(218, 165, 32, 0.5);
+  }
+
+  img {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
 }
+
 
 .contact-methods {
   display: flex;
@@ -76,6 +92,23 @@ button {
   text-decoration: none;
   color: #222;
   font-weight: 600;
+  position: relative;
+  border: 1px solid #ccc;
+
+  &:hover {
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  img {
+
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+
+  }
 }
 
 @media (max-width: 992px) {
