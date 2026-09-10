@@ -1,5 +1,7 @@
-import { Component, signal, afterNextRender } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, computed, effect, inject, signal } from '@angular/core';
+
+import { Router, RouterOutlet } from '@angular/router';
+
 import { Header } from './header/header';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -16,38 +18,36 @@ type Language = (typeof AVAILABLE_LANGUAGES)[number];
 export class App {
   protected readonly title = signal('adExLabFront');
 
-  constructor(private translate: TranslateService) {
-    afterNextRender(() => {
-      const lang = this.getInitialLanguage();
+  private readonly router = inject(Router);
+  private readonly translate = inject(TranslateService);
 
-      this.translate.setFallbackLang('en');
+  readonly lang = computed<Language>(() => {
+    const navigation = this.router.lastSuccessfulNavigation();
 
-      this.translate.use(lang);
+    const url = navigation?.finalUrl
+      ? this.router.serializeUrl(navigation.finalUrl)
+      : this.router.url;
+
+    const segment = url.split('/').filter(Boolean)[0];
+
+    return this.isLanguage(segment) ? segment : 'en';
+  });
+
+  constructor() {
+    this.translate.setFallbackLang('en');
+
+    effect(() => {
+      this.translate.use(this.lang());
     });
   }
 
-  changeLang(lang: Language) {
-    this.translate.use(lang);
+  changeLang(lang: Language): void {
+    const newUrl = this.router.url.replace(/^\/(uk|en)(?=\/|$)/, `/${lang}`);
 
-    localStorage.setItem('lang', lang);
+    void this.router.navigateByUrl(newUrl);
   }
 
-  private getInitialLanguage(): Language {
-    // 1. Мова з попередньої сесії
-    const savedLanguage = localStorage.getItem('lang') as Language | null;
-
-    if (savedLanguage && AVAILABLE_LANGUAGES.includes(savedLanguage)) {
-      return savedLanguage;
-    }
-
-    // 2. Мова браузера
-    const browserLanguage = navigator.language.split('-')[0].toLowerCase();
-
-    if (AVAILABLE_LANGUAGES.includes(browserLanguage as Language)) {
-      return browserLanguage as Language;
-    }
-
-    // 3. Fallback
-    return 'en';
+  private isLanguage(value: string | undefined): value is Language {
+    return !!value && AVAILABLE_LANGUAGES.includes(value as Language);
   }
 }

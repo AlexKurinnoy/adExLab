@@ -1,5 +1,10 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, DestroyRef, HostListener, inject, output } from '@angular/core';
+
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
+type Language = 'uk' | 'en';
 
 @Component({
   selector: 'app-header',
@@ -8,27 +13,33 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   styleUrl: './header.css',
 })
 export class Header {
-  currentLanguage = 'en';
+  private readonly translate = inject(TranslateService);
+  private readonly destroyRef = inject(DestroyRef);
 
-  constructor(private translate: TranslateService) {
-    this.currentLanguage = this.translate.currentLang() || 'en';
+  currentLanguage: Language = 'en';
 
-    this.translate.onLangChange.subscribe((event) => {
-      this.currentLanguage = event.lang;
+  languageChange = output<Language>();
+
+  isScrolled = false;
+
+  constructor() {
+    this.currentLanguage = (this.translate.currentLang() as Language) || 'en';
+
+    this.translate.onLangChange.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((event) => {
+      this.currentLanguage = event.lang as Language;
     });
   }
 
-  toggleLanguage(event: Event) {
+  changeLanguage(event: Event): void {
     event.preventDefault();
 
-    const newLanguage = this.currentLanguage === 'en' ? 'uk' : 'en';
+    const newLanguage: Language = this.currentLanguage === 'en' ? 'uk' : 'en';
 
-    this.translate.use(newLanguage);
+    this.languageChange.emit(newLanguage);
   }
-  isScrolled = false;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
     this.isScrolled = window.scrollY > 50;
   }
 }
