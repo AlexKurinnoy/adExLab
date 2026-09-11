@@ -5,7 +5,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { TranslateService } from '@ngx-translate/core';
 
-const AVAILABLE_LANGUAGES = ['uk', 'en'] as const;
+const AVAILABLE_LANGUAGES = ['ua', 'en'] as const;
 
 type Language = (typeof AVAILABLE_LANGUAGES)[number];
 
@@ -42,7 +42,7 @@ export class App {
   }
 
   changeLang(lang: Language): void {
-    const newUrl = this.router.url.replace(/^\/(uk|en)(?=\/|$)/, `/${lang}`);
+    const newUrl = this.router.url.replace(/^\/(ua|en)(?=\/|$)/, `/${lang}`);
 
     void this.router.navigateByUrl(newUrl);
   }

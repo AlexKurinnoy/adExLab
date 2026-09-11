@@ -81,6 +81,8 @@
 
       &:nth-child(2) {
         .icon-box {
+          height: 80px;
+          margin-bottom: 5px;
           background-image: url('/img/palette.svg');
         }
       }
@@ -117,6 +119,8 @@
 
       &:nth-child(8) {
         .icon-box {
+          height: 70px;
+          margin-bottom: 10px;
           background-image: url('/img/analytics.svg');
         }
       }

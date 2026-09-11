@@ -21,11 +21,11 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'uk',
+    redirectTo: 'ua',
   },
 
   {
     path: '**',
-    redirectTo: 'uk',
+    redirectTo: 'ua',
   },
 ];

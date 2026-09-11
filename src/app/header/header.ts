@@ -4,7 +4,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-type Language = 'uk' | 'en';
+type Language = 'ua' | 'en';
 
 @Component({
   selector: 'app-header',
@@ -33,7 +33,7 @@ export class Header {
   changeLanguage(event: Event): void {
     event.preventDefault();
 
-    const newLanguage: Language = this.currentLanguage === 'en' ? 'uk' : 'en';
+    const newLanguage: Language = this.currentLanguage === 'en' ? 'ua' : 'en';
 
     this.languageChange.emit(newLanguage);
   }

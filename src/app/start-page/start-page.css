@@ -1,4 +1,8 @@
-main{
+:host ::ng-deep h1 span {
+  color: goldenrod;
+}
+
+main {
   width: 100%;
   height: 100dvh;
   background-image: url('/img/pc.png');
@@ -9,33 +13,39 @@ main{
   font-family: Ubuntu, sans-serif;
   display: flex;
   align-items: center;
-  .main-box{
+
+  .main-box {
     /*border: 1px solid #000;*/
     width: 40%;
     margin-left: 10%;
-    h1{
+
+    h1 {
       font-size: 2.5em;
       padding-bottom: 30px;
-      span{
-        color: goldenrod;
-      }
+
     }
-    h2{
+
+
+    h2 {
       font-size: 1em;
       margin-bottom: 30px;
     }
-    .innerBox{
+
+    .innerBox {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       flex-direction: row;
-      a{
+
+      a {
         text-decoration: none;
-        &:hover{
+
+        &:hover {
           text-decoration: underline;
         }
       }
-      .actionButton{
+
+      .actionButton {
         width: fit-content;
         background: gold;
         border: none;
@@ -46,10 +56,12 @@ main{
         color: #000;
         cursor: pointer;
       }
-      .separ{
+
+      .separ {
         width: 30px;
       }
-      .playBox{
+
+      .playBox {
         width: fit-content;
         display: flex;
         align-items: center;
@@ -57,12 +69,13 @@ main{
         flex-direction: row;
         height: 100%;
 
-        a{
+        a {
           flex-direction: row;
           display: flex;
           align-items: center;
           justify-content: center;
-          img{
+
+          img {
             height: 50px;
             margin-right: 10px;
           }
@@ -72,7 +85,8 @@ main{
       }
     }
   }
-  .boxWithIcons{
+
+  .boxWithIcons {
     margin-top: 40px;
     width: 100%;
     display: flex;
@@ -80,12 +94,14 @@ main{
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    .iconBox{
+
+    .iconBox {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      .pic{
+
+      .pic {
         width: 50px;
         height: 50px;
         background-repeat: no-repeat;
@@ -93,22 +109,26 @@ main{
         background-size: cover;
         margin-right: 15px;
       }
+
       &:nth-child(1) {
-        .pic{
+        .pic {
           background-image: url('/img/star.svg');
         }
       }
+
       &:nth-child(2) {
-        .pic{
+        .pic {
           background-image: url('/img/rocket.svg');
         }
       }
+
       &:nth-child(3) {
-        .pic{
+        .pic {
           background-image: url('/img/target.svg');
         }
       }
-      .description{
+
+      .description {
 
       }
     }
