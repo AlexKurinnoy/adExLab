@@ -25,6 +25,7 @@ export class Header {
 
     this.translate.use(newLanguage);
   }
+
   isScrolled = false;
 
   @HostListener('window:scroll', [])
