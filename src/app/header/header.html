@@ -1,27 +1,38 @@
-<header class="header"
-        [class.scrolled]="isScrolled">
+<header
+  class="header"
+  [class.scrolled]="isScrolled"
+>
   <div class="logo">
-    <a href=""><img src="img/AdExpertsLab.svg" alt="Логотип"></a>
+    <a href="">
+      <img
+        src="img/AdExpertsLab.svg"
+        alt="Логотип"
+      >
+    </a>
   </div>
+
   <nav>
     <ul>
-      <li><a href="#">Послуги</a></li>
-      <li><a href="#">Кейси</a></li>
-      <li><a href="#">Про нас</a></li>
-      <li><a href="#">Процес</a></li>
-      <li><a href="#">Відгуки</a></li>
+      <li><a href="#"> {{ 'HEADER.SERVICES' | translate }}</a></li>
+      <li><a href="#">{{ 'HEADER.CASES' | translate }}</a></li>
+      <li><a href="#">{{ 'HEADER.ABOUT_US' | translate }}</a></li>
+      <li><a href="#">{{ 'HEADER.PROCESS' | translate }}</a></li>
+      <li><a href="#">{{ 'HEADER.REVIEWS' | translate }}</a></li>
+
       <li>
-        <a href="#" (click)="toggleLanguage($event)">
+        <a
+          href="#"
+          (click)="changeLanguage($event)"
+        >
           {{ 'HEADER.LANGUAGE' | translate }}
         </a>
       </li>
-
     </ul>
   </nav>
+
   <a href="#">
     <div class="actionButton">
       {{ 'HOME.WELCOME' | translate }}
     </div>
   </a>
-
 </header>

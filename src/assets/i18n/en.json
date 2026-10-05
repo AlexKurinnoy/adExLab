@@ -8,7 +8,12 @@
     "CANCEL": "Cancel"
   },
   "HEADER": {
-    "LANGUAGE": "Language"
+    "LANGUAGE": "Language",
+    "SERVICES": "Services",
+    "CASES": "Cases",
+    "ABOUT_US": "About Us",
+    "PROCESS": "Process",
+    "REVIEWS": "Reviews"
   },
   "CONTACT-PAGE": {
     "READY": "Ready to develop your business together?",
@@ -16,5 +21,14 @@
     "CONTACT_AS": "Contact us",
     "CONTACT_AS_DESCR": "Fill out the form and we will contact you as soon as possible",
     "LETS_GROW": "Let's grow your business together!"
+  },
+  "START-PAGE": {
+    "SLOGAN": "We create digital solutions that <span>deliver results</span>",
+    "SUB_SLOGAN": "We combine strategy, design, development, and marketing to help your business grow steadily and predictably.",
+    "CALL": "Get in touch",
+    "SEE": "Show video",
+    "YERS": "years of experience",
+    "SUCCESS": "successful projects",
+    "RESULT": "result-oriented"
   }
 }
