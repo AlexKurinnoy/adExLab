@@ -1,129 +1,158 @@
 .services-main-box {
-  font-family: Ubuntu, sans-serif !important;
+  --gold: goldenrod;
+  --gap: 16px;
+  --icon-h: 56px;
+
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  text-align: left;
   margin: 0 auto;
-  width: calc(100% - 80px);
+  padding: clamp(32px, 6vw, 60px) 0;
+  width: min(100% - 32px, 1200px);
   min-height: 100dvh;
-  height: auto;
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
   .head-title {
-    width: 100%;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
-    color: goldenrod;
-    text-align: left;
+    letter-spacing: 0.08em;
+    color: var(--gold);
   }
 
   .head-description {
-    margin-top: 20px;
-    width: 100%;
+    margin-top: 12px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;            /* мобільні: заголовок над слоганом */
+    gap: 12px;
 
     .descript {
-      font-size: 1.7em;
+      font-size: clamp(1.3rem, 5vw, 1.7rem);
+      line-height: 1.25;
+    }
+
+    .slogan {
+      font-size: 0.95em;
+      line-height: 1.5;
+      opacity: 0.75;
     }
   }
 
   .cases {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;        /* мобільні: 1 колонка */
+    gap: var(--gap);
+    margin-top: clamp(20px, 4vw, 30px);
 
     .case-box {
-      width: 250px;
-      height: 200px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: left;
-      text-align: left;
-      margin: 10px;
-      padding: 30px;
-      border-radius: 5px;
-      border: 1px solid lightgray;
+      gap: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(128, 128, 128, 0.3);
+      background: rgba(128, 128, 128, 0.05);
+      min-width: 0;
+      transition: border-color 0.2s, transform 0.2s;
 
-      h2 {
-        font-size: 1em;
-        margin-bottom: 10px;
-        text-align: left;
-      }
-
-      a {
-        color: goldenrod;
-        text-decoration: none;
-        margin-top: 20px;
+      &:hover {
+        border-color: var(--gold);
+        transform: translateY(-2px);
       }
 
       .icon-box {
         width: 100%;
-        height: 60px;
+        height: var(--icon-h);
         background-repeat: no-repeat;
-        background-position: left;
+        background-position: left center;
         background-size: contain;
-        margin-bottom: 20px;
+        flex-shrink: 0;
       }
 
-      &:nth-child(1) {
-        .icon-box {
-          background-image: url('/img/target-2.svg');
-        }
+      h2 {
+        margin: 4px 0 0;
+        font-size: 1.05em;
+        overflow-wrap: anywhere;       /* довгі слова не ламають верстку */
       }
 
-      &:nth-child(2) {
-        .icon-box {
-          height: 80px;
-          margin-bottom: 5px;
-          background-image: url('/img/palette.svg');
-        }
+      p {
+        margin: 0;
+        font-size: 0.95em;
+        line-height: 1.5;
+        opacity: 0.85;
       }
 
-      &:nth-child(3) {
-        .icon-box {
-          background-image: url('/img/code.svg');
-        }
+      a {
+        margin-top: auto;              /* посилання притиснуте донизу картки */
+        padding-top: 8px;
+        color: var(--gold);
+        text-decoration: none;
+        min-height: 44px;              /* зручна зона натискання на телефоні */
+        display: inline-flex;
+        align-items: center;
       }
 
-      &:nth-child(4) {
-        .icon-box {
-          background-image: url('/img/cart.svg');
-        }
-      }
+      &:nth-child(1) .icon-box { background-image: url('/img/target-2.svg'); }
+      &:nth-child(2) .icon-box { background-image: url('/img/palette.svg'); }
+      &:nth-child(3) .icon-box { background-image: url('/img/code.svg'); }
+      &:nth-child(4) .icon-box { background-image: url('/img/cart.svg'); }
+      &:nth-child(5) .icon-box { background-image: url('/img/growth-seo.svg'); }
+      &:nth-child(6) .icon-box { background-image: url('/img/google-ads.svg'); }
+      &:nth-child(7) .icon-box { background-image: url('/img/meta.svg'); }
+      &:nth-child(8) .icon-box { background-image: url('/img/analytics.svg'); }
+    }
+  }
 
-      &:nth-child(5) {
-        .icon-box {
-          background-image: url('/img/growth-seo.svg');
-        }
-      }
+  /* Дуже малі екрани */
+  @media (max-width: 360px) {
+    --icon-h: 48px;
 
-      &:nth-child(6) {
-        .icon-box {
-          background-image: url('/img/google-ads.svg');
-        }
-      }
+    .cases .case-box {
+      padding: 16px;
+    }
+  }
 
-      &:nth-child(7) {
-        .icon-box {
-          background-image: url('/img/meta.svg');
-        }
-      }
+  /* Великі телефони / малі планшети: 2 колонки */
+  @media (min-width: 600px) {
+    .head-description {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
 
-      &:nth-child(8) {
-        .icon-box {
-          height: 70px;
-          margin-bottom: 10px;
-          background-image: url('/img/analytics.svg');
-        }
+      .slogan {
+        text-align: right;
       }
+    }
+
+    .cases {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Планшети: 3 колонки */
+  @media (min-width: 900px) {
+    .cases {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Десктоп: 4 колонки (8 карток = 2 ряди по 4) */
+  @media (min-width: 1200px) {
+    .cases {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Для пристроїв без hover (touch) не рухаємо картку */
+  @media (hover: none) {
+    .cases .case-box:hover {
+      transform: none;
     }
   }
 }

@@ -1,38 +1,41 @@
 <header
   class="header"
   [class.scrolled]="isScrolled"
+  [class.menu-open]="isMenuOpen"
 >
-  <div class="logo">
-    <a href="">
-      <img
-        src="img/AdExpertsLab.svg"
-        alt="Логотип"
-      >
-    </a>
-  </div>
+  <a class="logo" href="/">
+    <img src="img/AdExpertsLab.svg" alt="Логотип">
+  </a>
 
-  <nav>
+  <nav id="main-nav" class="nav" [class.open]="isMenuOpen">
     <ul>
-      <li><a href="#"> {{ 'HEADER.SERVICES' | translate }}</a></li>
-      <li><a href="#">{{ 'HEADER.CASES' | translate }}</a></li>
-      <li><a href="#">{{ 'HEADER.ABOUT_US' | translate }}</a></li>
-      <li><a href="#">{{ 'HEADER.PROCESS' | translate }}</a></li>
-      <li><a href="#">{{ 'HEADER.REVIEWS' | translate }}</a></li>
-
+      <li><a href="#" (click)="closeMenu()">{{ 'HEADER.SERVICES' | translate }}</a></li>
+      <li><a href="#" (click)="closeMenu()">{{ 'HEADER.CASES' | translate }}</a></li>
+      <li><a href="#" (click)="closeMenu()">{{ 'HEADER.ABOUT_US' | translate }}</a></li>
+      <li><a href="#" (click)="closeMenu()">{{ 'HEADER.PROCESS' | translate }}</a></li>
+      <li><a href="#" (click)="closeMenu()">{{ 'HEADER.REVIEWS' | translate }}</a></li>
       <li>
-        <a
-          href="#"
-          (click)="changeLanguage($event)"
-        >
+        <a href="#" (click)="changeLanguage($event)">
           {{ 'HEADER.LANGUAGE' | translate }}
         </a>
       </li>
     </ul>
   </nav>
 
-  <a href="#">
-    <div class="actionButton">
-      {{ 'HOME.WELCOME' | translate }}
-    </div>
-  </a>
+  <div class="header-actions">
+    <a class="actionButton" href="#">{{ 'HOME.WELCOME' | translate }}</a>
+
+    <button
+      class="burger"
+      type="button"
+      aria-label="Меню"
+      aria-controls="main-nav"
+      [attr.aria-expanded]="isMenuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>

@@ -4,7 +4,9 @@
 
 main {
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  padding-top: 80px; /* місце під fixed-шапку */
   background-image: url('/img/pc.png');
   background-repeat: no-repeat;
   background-position: right center;
@@ -13,124 +15,190 @@ main {
   font-family: Ubuntu, sans-serif;
   display: flex;
   align-items: center;
+}
 
-  .main-box {
-    /*border: 1px solid #000;*/
-    width: 40%;
-    margin-left: 10%;
+main .main-box {
+  width: 40%;
+  margin-left: 10%;
+}
 
-    h1 {
-      font-size: 2.5em;
-      padding-bottom: 30px;
+main .main-box h1 {
+  font-size: clamp(1.8em, 4vw, 2.5em);
+  line-height: 1.15;
+  padding-bottom: 30px;
+  margin: 0;
+}
 
-    }
+main .main-box h2 {
+  font-size: clamp(0.95em, 1.6vw, 1.1em);
+  font-weight: 400;
+  margin: 0 0 30px;
+}
 
+/* Кнопка + play */
+main .innerBox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px 30px;
+}
 
-    h2 {
-      font-size: 1em;
-      margin-bottom: 30px;
-    }
+main .innerBox a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .innerBox {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: row;
+main .innerBox a:hover {
+  text-decoration: underline;
+}
 
-      a {
-        text-decoration: none;
+main .innerBox .actionButton {
+  width: fit-content;
+  background: gold;
+  border-radius: 6px;
+  padding: 20px;
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+}
 
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+/* окремий розділювач більше не потрібен, відступ дає gap */
+main .innerBox .separ {
+  display: none;
+}
 
-      .actionButton {
-        width: fit-content;
-        background: gold;
-        border: none;
-        outline: none;
-        display: block;
-        border-radius: 6px;
-        padding: 20px;
-        color: #000;
-        cursor: pointer;
-      }
+main .innerBox .playBox {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
 
-      .separ {
-        width: 30px;
-      }
+main .innerBox .playBox a {
+  display: flex;
+  align-items: center;
+}
 
-      .playBox {
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 100%;
+main .innerBox .playBox img {
+  height: 50px;
+  margin-right: 10px;
+}
 
-        a {
-          flex-direction: row;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+main .innerBox .playBox p {
+  margin: 0;
+}
 
-          img {
-            height: 50px;
-            margin-right: 10px;
-          }
-        }
+/* Блок зі статистикою */
+main .boxWithIcons {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 24px;
+}
 
+main .iconBox {
+  display: flex;
+  align-items: center;
+}
 
-      }
-    }
+main .iconBox .pic {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main .iconBox:nth-child(1) .pic { background-image: url('/img/star.svg'); }
+main .iconBox:nth-child(2) .pic { background-image: url('/img/rocket.svg'); }
+main .iconBox:nth-child(3) .pic { background-image: url('/img/target.svg'); }
+
+main .iconBox .description h3 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+main .iconBox .description p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* ---------- Ноутбуки / малі екрани ---------- */
+@media (max-width: 1100px) {
+  main .main-box {
+    width: 48%;
+    margin-left: 5%;
+  }
+}
+
+/* ---------- Планшет і телефон: колонка ---------- */
+@media (max-width: 900px) {
+  main {
+    padding-top: 64px; /* висота шапки на мобільному */
+    align-items: flex-start;
+    /* картинка знизу по центру */
+    background-position: center bottom 16px;
+    background-size: min(85vw, 450px);
   }
 
-  .boxWithIcons {
-    margin-top: 40px;
+  main .main-box {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin: 0;
+    padding: 32px 20px calc(min(85vw, 450px) * 0.75 + 32px);
+    box-sizing: border-box;
+    text-align: left;
+  }
 
-    .iconBox {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+  main .main-box h1 {
+    padding-bottom: 20px;
+  }
 
-      .pic {
-        width: 50px;
-        height: 50px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        margin-right: 15px;
-      }
+  main .main-box h2 {
+    margin-bottom: 24px;
+  }
 
-      &:nth-child(1) {
-        .pic {
-          background-image: url('/img/star.svg');
-        }
-      }
+  main .boxWithIcons {
+    margin-top: 28px;
+    justify-content: flex-start;
+    gap: 20px 32px;
+  }
+}
 
-      &:nth-child(2) {
-        .pic {
-          background-image: url('/img/rocket.svg');
-        }
-      }
+/* ---------- Малі телефони ---------- */
+@media (max-width: 480px) {
+  main .main-box {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-      &:nth-child(3) {
-        .pic {
-          background-image: url('/img/target.svg');
-        }
-      }
+  main .innerBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 
-      .description {
+  main .innerBox .actionButton {
+    padding: 16px 20px;
+  }
 
-      }
-    }
+  main .innerBox .playBox img {
+    height: 44px;
+  }
+
+  main .boxWithIcons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  main .iconBox .pic {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
   }
 }

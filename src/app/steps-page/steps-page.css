@@ -1,148 +1,158 @@
 .steps-main-box {
-  font-family: Ubuntu, sans-serif !important;
+  --gold: goldenrod;
+  --gap: 16px;
+  --icon-size: 56px;
+  --number-size: 40px;
+
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  margin: 60px auto;
-  width: calc(100% - 80px);
+  align-items: stretch;
+  margin: clamp(32px, 6vw, 60px) auto;
+  width: min(100% - 32px, 1200px); /* 16px відступи з боків на мобільних */
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
 
   .head-title {
-    width: 100%;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: bold;
-    color: goldenrod;
-    text-align: left;
+    letter-spacing: 0.08em;
+    color: var(--gold);
   }
 
   .head-description {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 12px;
 
     .descript {
-      font-size: 1.7em;
+      font-size: clamp(1.3rem, 4.5vw, 1.7rem);
+      line-height: 1.25;
     }
   }
 
   .steps {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;          /* мобільні: 1 колонка */
+    gap: var(--gap);
+    margin-top: clamp(20px, 4vw, 30px);
 
     .step-box {
-      width: 200px;
-      height: 150px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: left;
-      text-align: left;
-      margin: 10px;
-      padding: 30px;
-      border-radius: 5px;
-
-      h2 {
-        font-size: 1em;
-        margin-bottom: 10px;
-        text-align: left;
-      }
-
-      a {
-        color: goldenrod;
-        text-decoration: none;
-        margin-top: 20px;
-      }
+      gap: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(128, 128, 128, 0.25);
+      background: rgba(128, 128, 128, 0.06);
+      min-width: 0;                      /* щоб текст не розпирав грід */
 
       .icons {
         display: flex;
-        flex-direction: row;
-        justify-content: left;
         align-items: center;
+        justify-content: space-between;  /* номер ліворуч, іконка праворуч */
         width: 100%;
 
-        .number-box, .icon-box {
-          width: 40px;
-          height: 40px;
+        .number-box,
+        .icon-box {
+          flex-shrink: 0;
           background-repeat: no-repeat;
-          background-position: left;
+          background-position: center;
           background-size: contain;
-          margin-bottom: 10px;
+        }
+
+        .number-box {
+          width: var(--number-size);
+          height: var(--number-size);
+          background-position: left center;
+        }
+
+        .icon-box {
+          width: var(--icon-size);
+          height: var(--icon-size);
+          background-position: right center;
         }
       }
 
-      &:nth-child(1) {
-        .icons {
-          .icon-box {
-            width: 60px;
-            height: 60px;
-            background-image: url('/img/message.svg');
-          }
-
-          .number-box {
-            background-image: url('/img/step-01.svg');
-          }
-        }
+      h2 {
+        margin: 6px 0 0;
+        font-size: 1.05em;
+        text-align: left;
       }
 
-      &:nth-child(2) {
-        .icons {
-          .icon-box {
-            width: 60px;
-            height: 60px;
-            background-image: url('/img/search.svg');
-          }
-
-          .number-box {
-            background-image: url('/img/step-02.svg');
-          }
-        }
+      p {
+        margin: 0;
+        font-size: 0.95em;
+        line-height: 1.5;
+        opacity: 0.85;
       }
 
-      &:nth-child(3) {
-        .icons {
-          .icon-box {
-            background-image: url('/img/pencil.svg');
-          }
-
-          .number-box {
-            background-image: url('/img/step-03.svg');
-          }
-        }
+      a {
+        color: var(--gold);
+        text-decoration: none;
+        margin-top: 12px;
       }
 
-      &:nth-child(4) {
-        .icons {
-          .icon-box {
-            background-image: url('/img/code.svg');
-          }
-
-          .number-box {
-            background-image: url('/img/step-04.svg');
-          }
-        }
+      &:nth-child(1) .icons {
+        .icon-box   { background-image: url('/img/message.svg'); }
+        .number-box { background-image: url('/img/step-01.svg'); }
       }
-
-      &:nth-child(5) {
-        .icons {
-          .icon-box {
-            background-image: url('/img/analytics.svg');
-          }
-
-          .number-box {
-            background-image: url('/img/step-05.svg');
-          }
-        }
+      &:nth-child(2) .icons {
+        .icon-box   { background-image: url('/img/search.svg'); }
+        .number-box { background-image: url('/img/step-02.svg'); }
       }
+      &:nth-child(3) .icons {
+        .icon-box   { background-image: url('/img/pencil.svg'); }
+        .number-box { background-image: url('/img/step-03.svg'); }
+      }
+      &:nth-child(4) .icons {
+        .icon-box   { background-image: url('/img/code.svg'); }
+        .number-box { background-image: url('/img/step-04.svg'); }
+      }
+      &:nth-child(5) .icons {
+        .icon-box   { background-image: url('/img/analytics.svg'); }
+        .number-box { background-image: url('/img/step-05.svg'); }
+      }
+    }
+  }
 
+  /* Дуже малі екрани */
+  @media (max-width: 360px) {
+    --icon-size: 48px;
+    --number-size: 34px;
 
+    .steps .step-box {
+      padding: 16px;
+    }
+  }
+
+  /* Мобільні (ландшафт) / малі планшети: 2 колонки */
+  @media (min-width: 600px) {
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+
+      .step-box:last-child:nth-child(odd) {
+        grid-column: 1 / -1;             /* 5-та картка на всю ширину */
+      }
+    }
+  }
+
+  /* Планшети: 3 колонки */
+  @media (min-width: 900px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+
+      .step-box:last-child:nth-child(odd) {
+        grid-column: auto;
+      }
+    }
+  }
+
+  /* Десктоп: 5 в ряд */
+  @media (min-width: 1200px) {
+    .steps {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 }
