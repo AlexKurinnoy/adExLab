@@ -30,5 +30,65 @@
     "YERS": "years of experience",
     "SUCCESS": "successful projects",
     "RESULT": "result-oriented"
+  },
+  "PROCESS": {
+    "TITLE": "HOW WE WORK",
+    "SUBTITLE": "Transparent process – clear result",
+    "01": {
+      "TITLE": "Discovery & Brief",
+      "DESCRIPTION": "We learn about your business, product and needs, define the project goals and align on the expected outcomes."
+    },
+    "02": {
+      "TITLE": "Analysis & Strategy",
+      "DESCRIPTION": "We research your target audience, market and competitors, identify opportunities and build a clear action plan."
+    },
+    "03": {
+      "TITLE": "Design & Prototype",
+      "DESCRIPTION": "We turn the strategy into a visual concept, structure and prototype of your future digital solution."
+    },
+    "04": {
+      "TITLE": "Development & Launch",
+      "DESCRIPTION": "We build, test and launch the finished digital product, ensuring usability, responsiveness and quality."
+    },
+    "05": {
+      "TITLE": "Support & Growth",
+      "DESCRIPTION": "We analyse the results, identify opportunities for improvement and help your project grow and scale."
+    }
+  },
+  "SERVICES": {
+    "TITLE": "Comprehensive digital solutions for your business",
+    "SUBTITLE": "We don't just complete tasks — we help you achieve your goals.",
+    "01": {
+      "TITLE": "Branding",
+      "DESCRIPTION": "We create strong and recognisable brands that build trust, stand out from competitors and create a consistent image for your business."
+    },
+    "02": {
+      "TITLE": "Design",
+      "DESCRIPTION": "We create modern, functional and engaging designs that highlight your brand's value and help you communicate effectively with your audience."
+    },
+    "03": {
+      "TITLE": "Website Development",
+      "DESCRIPTION": "We build modern, fast and user-friendly websites tailored to your business goals, user needs and future growth."
+    },
+    "04": {
+      "TITLE": "E-commerce",
+      "DESCRIPTION": "We develop fast and user-friendly online stores that support sales, improve the customer experience and provide a foundation for business growth."
+    },
+    "05": {
+      "TITLE": "SEO",
+      "DESCRIPTION": "We optimise your website for search engines, improve its visibility and attract more relevant organic traffic."
+    },
+    "06": {
+      "TITLE": "Google Ads",
+      "DESCRIPTION": "We set up and optimise Google advertising to attract qualified leads, increase sales and make your advertising budget work more effectively."
+    },
+    "07": {
+      "TITLE": "Meta Ads",
+      "DESCRIPTION": "We launch and optimise advertising on Facebook and Instagram to reach the right audience, generate leads and achieve measurable business results."
+    },
+    "08": {
+      "TITLE": "Analysis & Strategy",
+      "DESCRIPTION": "We analyse your business, market and competitors, identify key opportunities and build a strategy focused on sustainable growth and competitive advantage."
+    }
   }
 }
