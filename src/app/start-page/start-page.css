@@ -6,15 +6,30 @@ main {
   width: 100%;
   min-height: 100dvh;
   box-sizing: border-box;
-  padding-top: 80px; /* місце під fixed-шапку */
-  background-image: url('/img/pc.png');
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: clamp(200px, 50vw, 800px);
+  padding: 80px 16px 0;               /* місце під fixed-шапку */
   position: relative;
   font-family: Ubuntu, sans-serif;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  overflow-x: clip;                   /* розліт шарів не дає горизонтального скролу */
+
+  app-hero-parallax {
+    flex-shrink: 0;
+    margin-left: auto;                /* притискає праворуч, як background-position: right */
+  }
+
+  @media (max-width: 820px) {
+    flex-direction: column-reverse;   /* ілюстрація зверху, текст під нею */
+    justify-content: center;
+    padding-top: 96px;
+
+    app-hero-parallax {
+      width: min(100%, 520px);
+      margin: 0 auto;
+    }
+  }
 }
 
 main .main-box {

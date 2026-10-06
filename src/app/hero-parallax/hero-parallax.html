@@ -1,0 +1,13 @@
+<div class="view" aria-hidden="true">
+  <div class="stage" #stage>
+    @for (l of layers; track l.name) {
+      <img
+        [src]="'img/parallax/' + l.name + '.webp'"
+        alt=""
+        draggable="false"
+        [class.card]="l.name === 'cart' || l.name === 'chart' || l.name === 'target'"
+        [class.float]="l.name === 'plant' || l.name === 'sphere'"
+        [style.left.%]="l.x" [style.top.%]="l.y" [style.width.%]="l.w" [style.z-index]="l.z" />
+    }
+  </div>
+</div>

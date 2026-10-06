@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  width: clamp(200px, 50vw, 800px);   /* той самий розмір, що був у background-size */
+}
+
+.view {
+  perspective: 1400px;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1523 / 1033;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.stage img {
+  position: absolute;
+  display: block;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.stage img.card  { filter: drop-shadow(0 18px 24px rgba(120, 80, 0, .18)); }
+.stage img.float { filter: drop-shadow(0 14px 16px rgba(0, 0, 0, .16)); }
